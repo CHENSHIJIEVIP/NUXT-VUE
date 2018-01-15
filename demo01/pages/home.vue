@@ -2,6 +2,8 @@
 	<div>
 		HOME
 		<nuxt-child/>
+		<!-- <nuxt-link to="layouts/default">Index</nuxt-link> -->
+		<button @click="backGo">返回</button>
 		<hr>
   		<button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
   		<div>
@@ -23,6 +25,11 @@
 		},
 		head: {
 			title: 'List of posts'
+		},
+		methods:{
+			backGo(){
+				this.$router.go(-1)
+			}
 		}
 
 	}
